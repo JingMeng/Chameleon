@@ -1,4 +1,4 @@
-﻿package com.xw.sample.chameleon;
+package com.xw.sample.chameleon;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
-import android.support.v7.graphics.Palette;
+import androidx.palette.graphics.Palette;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -84,19 +84,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button0:
+        if (v.getId() == R.id.button0) {
                 mChameleon.toColor(ContextCompat.getColor(this, R.color.blue));
-                break;
-            case R.id.button1:
+        } else if (v.getId() == R.id.button1) {
                 mChameleon.toColor(ContextCompat.getColor(this, R.color.red));
-                break;
-            case R.id.button2:
+        } else if (v.getId() == R.id.button2) {
                 mChameleon.toColor(ContextCompat.getColor(this, R.color.yellow));
-                break;
-            case R.id.button3:
+        } else if (v.getId() == R.id.button3) {
                 mChameleon.toColor(ContextCompat.getColor(this, R.color.colorPrimary));
-                break;
         }
 
         mChameleon.startChangingColor();
